@@ -4,20 +4,25 @@ import { connect } from 'react-redux';
 import '../styles/page.css';
 
 import Search from './search';
+import Car from './car';
 
 const Page = props => {
-  // console.log(props.cars);
-
+  console.log(props.cars);
   return (
     <div className="page">
       <Search></Search>
-      <h1>Pesquisa de veículos do TradersClub</h1>
+      {
+        props.query === "" 
+          ? <h1>Pesquisa de veículos do TradersClub</h1>
+          : props.cars.map(c => <Car car={c}></Car>)
+      }
     </div>
   );
 }
 
 const mapStateToProps = state => ({
-  cars: state.cars
+  cars: state.cars,
+  query: state.query
 });
 
 // const mapDispatchToProps = dispatch =>

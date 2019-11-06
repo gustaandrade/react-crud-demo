@@ -11,12 +11,12 @@ const Search = props => {
   return (
     <div className="search">
       <div className="form">
-        <input placeholder="Pesquise por um veículo" ref={ref => inputRef = ref}></input>
-        <button className="search-button" onClick={
-          () => {
-            props.addQueryToStore(inputRef.value);
-          }
-        }>Cadastrar</button>
+        <input placeholder="Pesquise por um veículo" ref={ref => inputRef = ref} 
+        onChange={() => {
+          props.addQueryToStore(inputRef.value);
+        }
+        }></input>
+        <button className="search-button">Cadastrar</button>
       </div>
     </div>
   );

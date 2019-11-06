@@ -18,10 +18,10 @@ class App extends Component {
     .catch(console.log)
   }
 
-  componentDidUpdate() {
-    console.log(this.props.cars);
-    console.log(this.props.query);
-  }
+  // componentDidUpdate() {
+  //   console.log(this.props.cars);
+  //   console.log(this.props.query);
+  // }
 
   render() {
     return (
