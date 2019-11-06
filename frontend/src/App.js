@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { connect } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './styles/App.css';
+
+import Sidebar from './components/sidebar';
+import Page from './components/page';
+
+class App extends Component {
+  // componentDidMount() {
+  //   fetch('https://desolate-brushlands-20405.herokuapp.com/api/v1/products')
+  //   .then(res => res.json())
+  //   .then((data) => {
+  //     this.props.addProductsToStore(data);
+  //   })
+  //   .catch(console.log)
+  // }
+
+  render() {
+    return (
+      <div className="main">
+        <Sidebar></Sidebar>
+        <Page></Page>
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  // products: state.products,
+  // cart: state.cart
+});
+
+const mapDispatchToProps = dispatch => ({
+  // addProductsToStore: products => dispatch(addProductsToStore(products))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

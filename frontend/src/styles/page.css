@@ -1,0 +1,26 @@
+@font-face {
+  font-family: Montello;
+  src: url(../assets/fonts/Montello_DEMO.otf);
+}
+
+.page {
+  background-color: #1F2D40;
+  background-image: url(../assets/img/car-wireframe.png);
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  width: 75%;
+  max-width: 75%;
+}
+
+.page h1 {
+  font-family: Montello;
+  font-size: 72pt;
+  font-weight: 300;
+
+  color: #fff;
+  text-align: right;
+
+  margin: 100px 100px 100px 50px;
+}

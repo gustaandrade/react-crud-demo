@@ -1,0 +1,12 @@
+.background {
+  background-color: #0E1823;
+
+  width: 25%;
+  max-width: 25%;
+}
+
+.background img {
+  display: block;
+  margin: 40px auto 0 auto;
+  width: 30%;
+}
