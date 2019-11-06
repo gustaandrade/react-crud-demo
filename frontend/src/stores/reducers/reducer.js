@@ -1,25 +1,23 @@
 export const initialState = {
+  cars: [],
   query: ""
 }
 
 const reducer = (state = initialState, action) => {
-  // switch(action.type) {
-  //   case "ADD_PRODUCTS_TO_STORE":
-  //     return {
-  //       ...state, 
-  //       products: action.products
-  //     };
-
-  //   case "ADD_PRODUCT_TO_CART": 
-  //     return {
-  //       ...state,
-  //       cart: [...state.cart, action.product]
-  //     }
-
-  //   default:
-  //     return state;
-  // }
-  return state;
+  switch(action.type) {
+    case "ADD_CARS_TO_STORE":
+      return {
+        ...state, 
+        cars: action.cars
+      };
+    case "ADD_QUERY_TO_STORE":
+      return {
+        ...state,
+        query: action.query
+      }
+    default:
+      return state;
+  }
 }
 
 export default reducer;

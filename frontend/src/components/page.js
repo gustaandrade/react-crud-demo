@@ -6,6 +6,8 @@ import '../styles/page.css';
 import Search from './search';
 
 const Page = props => {
+  // console.log(props.cars);
+
   return (
     <div className="page">
       <Search></Search>
@@ -14,7 +16,9 @@ const Page = props => {
   );
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  cars: state.cars
+});
 
 // const mapDispatchToProps = dispatch =>
 

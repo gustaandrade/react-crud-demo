@@ -6,15 +6,22 @@ import './styles/App.css';
 import Sidebar from './components/sidebar';
 import Page from './components/page';
 
+import { addCarsToStore } from './stores/actions/action';
+
 class App extends Component {
-  // componentDidMount() {
-  //   fetch('https://desolate-brushlands-20405.herokuapp.com/api/v1/products')
-  //   .then(res => res.json())
-  //   .then((data) => {
-  //     this.props.addProductsToStore(data);
-  //   })
-  //   .catch(console.log)
-  // }
+  componentDidMount() {
+    fetch('http://private-anon-fa55b3081f-tradersclubapi.apiary-mock.com/api/cars')
+    .then(res => res.json())
+    .then((data) => {
+      this.props.addCarsToStore(data);
+    })
+    .catch(console.log)
+  }
+
+  componentDidUpdate() {
+    console.log(this.props.cars);
+    console.log(this.props.query);
+  }
 
   render() {
     return (
@@ -27,12 +34,12 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  // products: state.products,
-  // cart: state.cart
+  cars: state.cars,
+  query: state.query
 });
 
 const mapDispatchToProps = dispatch => ({
-  // addProductsToStore: products => dispatch(addProductsToStore(products))
+  addCarsToStore: cars => dispatch(addCarsToStore(cars))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
