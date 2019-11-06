@@ -14,7 +14,12 @@ const Page = props => {
       {
         props.query === "" 
           ? <h1>Pesquisa de veículos do TradersClub</h1>
-          : props.cars.map(c => <Car car={c}></Car>)
+          : props.cars.cars.map(c => {
+            if (c.model.toLowerCase().includes(props.query.toLowerCase())) {
+              return <Car car={c} key={c.id}></Car>;
+            }
+            return null;
+          })
       }
     </div>
   );
