@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-import './styles/App.css';
+import './App.css';
 
 import Sidebar from './components/sidebar';
 import Page from './components/page';
@@ -26,9 +26,9 @@ class App extends Component {
   render() {
     return (
       <div className="main">
-        <Sidebar></Sidebar>
-        <Page></Page>
-      </div>
+        <Sidebar />
+        <Page />
+      </div>    
     );
   }
 }

@@ -1,26 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 import '../styles/page.css';
 
 import Search from './search';
-import Car from './car';
+import Routes from '../routes';
 
 const Page = props => {
   console.log(props.cars);
   return (
     <div className="page">
-      <Search></Search>
-      {
-        props.query === "" 
-          ? <h1>Pesquisa de veículos do TradersClub</h1>
-          : props.cars.cars.map(c => {
-            if (c.model.toLowerCase().includes(props.query.toLowerCase())) {
-              return <Car car={c} key={c.id}></Car>;
-            }
-            return null;
-          })
-      }
+      <Search />
+
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
     </div>
   );
 }

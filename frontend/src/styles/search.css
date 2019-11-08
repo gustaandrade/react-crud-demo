@@ -7,6 +7,8 @@
 
   height: 15%;
   min-height: 15%;
+
+  margin-bottom: 20px;
 }
 
 .search .form {
@@ -34,7 +36,7 @@
   color: #8A8A8A;
 }
 
-.search-button {
+.main-button {
   background-color: #fff;
   border: 0.5px solid #fff;
   border-radius: 5px;

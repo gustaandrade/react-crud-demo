@@ -16,7 +16,7 @@ const Search = props => {
           props.addQueryToStore(inputRef.value);
         }
         }></input>
-        <button className="search-button">Cadastrar</button>
+        <button className="main-button">Cadastrar</button>
       </div>
     </div>
   );
