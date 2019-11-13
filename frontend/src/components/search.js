@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import '../styles/search.css';
 
-import { addQueryToStore } from '../stores/actions/action';
+import { addQueryToStore, filterCar } from '../stores/actions/action';
 
 const Search = props => {
   let inputRef = {};
@@ -12,11 +13,10 @@ const Search = props => {
     <div className="search">
       <div className="form">
         <input placeholder="Pesquise por um veículo" ref={ref => inputRef = ref} 
-        onChange={() => {
-          props.addQueryToStore(inputRef.value);
-        }
-        }></input>
-        <button className="main-button">Cadastrar</button>
+          onChange={() => { props.addQueryToStore(inputRef.value);}} />
+        <Link to="/car" onClick={props.filterCar({})}>
+          <button className="main-button">Cadastrar</button>
+        </Link>
       </div>
     </div>
   );
@@ -27,7 +27,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addQueryToStore: query => dispatch(addQueryToStore(query))
+  addQueryToStore: query => dispatch(addQueryToStore(query)),
+  filterCar: car => dispatch(filterCar(car))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

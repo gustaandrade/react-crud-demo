@@ -47,6 +47,10 @@
   padding: 10px;
 }
 
+.data-select option {
+  background-color: #1F2D40;
+}
+
 .data-button-block {
   flex: 1;
   margin: 15px 50px;

@@ -11,9 +11,8 @@ const Page = props => {
   console.log(props.cars);
   return (
     <div className="page">
-      <Search />
-
       <BrowserRouter>
+        <Search />
         <Routes />
       </BrowserRouter>
     </div>
