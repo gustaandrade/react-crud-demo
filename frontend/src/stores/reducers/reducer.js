@@ -1,7 +1,7 @@
 export const initialState = {
   cars: {},
   query: "",
-  brands: {},
+  brands: {brands: [{id: "0", name: "dummy"}]},
   filteredCar: {}
 }
 

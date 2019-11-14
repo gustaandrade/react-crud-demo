@@ -39,13 +39,13 @@ const CarDetailed = props => {
       console.log(cl);
     })
     .then((data) => {
-      this.props.registerCar(data);
+      props.registerCar(data);
     })
     .catch(console.log);
   }
   
-  const deleteExistingCar = car => {
-    fetch(`http://dev.tradersclub.com.br:12000/api/cars/${car.id}`, {
+  const deleteExistingCar = () => {
+    fetch(`http://dev.tradersclub.com.br:12000/api/cars/${props.filteredCar.id}`, {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',
@@ -68,13 +68,13 @@ const CarDetailed = props => {
       console.log(cl);
     })
     .then((data) => {
-      this.props.deleteCar(data);
+      props.deleteCar(data);
     })
     .catch(console.log);
   }
   
-  const editExistingCar = car => {
-    fetch(`http://dev.tradersclub.com.br:12000/api/cars/${car.id}`, {
+  const editExistingCar = () => {
+    fetch(`http://dev.tradersclub.com.br:12000/api/cars/${props.filteredCar.id}`, {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
@@ -82,11 +82,10 @@ const CarDetailed = props => {
       }
     })
     .then(res => {
-      let cl = res.clone().json();
-      console.log(cl);
+      console.log(res.json());
     })
     .then((data) => {
-      this.props.editCar(data);
+      props.editCar(data);
     })
     .catch(console.log);
   }
@@ -95,15 +94,15 @@ const CarDetailed = props => {
     <div className="data">
       <div className="data-form">
         <input id="form-car-title" placeholder="Título" ref={titleRef}
-          value={props.filteredCar.title}
+          defaultValue={props.filteredCar.title}
         />
 
         <div className="data-block">
           <input placeholder="Modelo" ref={modelRef} 
-            value={props.filteredCar.model}
+            defaultValue={props.filteredCar.model}
           />
           <input placeholder="Ano" ref={yearRef} 
-            value={props.filteredCar.year}
+            defaultValue={props.filteredCar.year}
           />
         </div>
 
@@ -115,15 +114,15 @@ const CarDetailed = props => {
 
         <div className="data-block">
           <input placeholder="Cor" ref={colorRef}
-            value={props.filteredCar.color}
+            defaultValue={props.filteredCar.color}
           />
           <input placeholder="Preço" ref={priceRef} 
-            value={props.filteredCar.price}
+            defaultValue={props.filteredCar.price}
           />
         </div>
 
         <input placeholder="KM" ref={kmRef} 
-          value={props.filteredCar.km}
+          defaultValue={props.filteredCar.km}
         />
 
         <div className="data-button-block">

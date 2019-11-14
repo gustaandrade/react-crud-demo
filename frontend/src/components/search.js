@@ -14,8 +14,8 @@ const Search = props => {
       <div className="form">
         <input placeholder="Pesquise por um veículo" ref={ref => inputRef = ref} 
           onChange={() => { props.addQueryToStore(inputRef.value);}} />
-        <Link to="/car" onClick={props.filterCar({})}>
-          <button className="main-button">Cadastrar</button>
+        <Link to="/car">
+          <button className="main-button" onClick={props.filterCar({})}>Cadastrar</button>
         </Link>
       </div>
     </div>
